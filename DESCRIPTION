@@ -1,0 +1,16 @@
+Package: persistR
+Type: Package
+Title: Set and Retrieve Persistent Values Across R Sessions
+Version: 1.0.0
+Author: Geoffrey Poole
+Maintainer: The package maintainer <gpoole@eco-metrics.com>
+Description: In scripts, it is sometimes useful to be able to set values once 
+    and then retrieve them in future R sessions.  For instance, one can avoid 
+    putting login credentials in plain text in code.  persistR creates an 
+    .RData file to store a named list.  You can add values to, retrieve value from, 
+    and remove values from this saved list.  Once added, they will persist on disk 
+    and you can retrieve them any time until you choose to remove the values.
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+License: MIT + file LICENSE
