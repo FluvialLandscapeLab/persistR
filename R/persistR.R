@@ -16,8 +16,9 @@
 #' stored list.
 #'
 #' @return \code{setPersistent} returns the name of the full path to the file
-#'   where the value was stored, invisibly. \code{getPersistent} returns value associated
-#'   with the "key" name in the stored list.
+#'   where the value was stored, invisibly. \code{getPersistent} returns value
+#'   associated with the \code{key} name in the stored list, or NULL if no value
+#'   in the saved list is associated with the \code{key}.
 #' @examples
 #' # Example for SQL credentials
 #' setPersistent(
@@ -53,15 +54,15 @@
 #' @param key A character string that represents the name of the item to add to,
 #'   retrieve from, or remove from the stored list.  If key is NULL for
 #'   \code{getPersistent}, the names of all of the keys in the stored list will
-#'   be returned
+#'   be returned.
 #' @param value Value to add to the stored list, using the name in \code{key}.
 #'   Set to NULL to remove the list entry associated with \code{key}.
 #' @param filename The fully qualified name of the .Rdata file where a named
 #'   list of values is stored.  (You may choose to have more than one file to
 #'   store different collections of values.)  If filename is NULL, the value of
-#'   the "PERSISTENT_FILE" variable from the .REnviron config file will be used.  If
-#'   there is no "PERSISTENT_FILE" value in the .REnviron config file, the default
-#'   value of "~\.persistR.RData" will be used.
+#'   the "PERSISTENT_FILE" variable from the .REnviron config file will be used.
+#'   If there is no "PERSISTENT_FILE" value in the .REnviron config file, the
+#'   default value of "~\.persistR.RData" will be used.
 #' @export
 setPersistent = function(key, value, filename = NULL) {
   if(is.null(filename)) filename = Sys.getenv("PERSISTENT_FILE")
